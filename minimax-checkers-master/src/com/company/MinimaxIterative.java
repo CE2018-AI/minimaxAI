@@ -165,14 +165,6 @@ public class MinimaxIterative extends Player implements AI{
             chk_win = true;
             Main.println("===========================================");
         }
-        if( (board.getNumWhitePieces() == 0) || (board.getNumBlackPieces() == 0) )
-        {
-            Main.println("/////side: " + maximizingPlayer +" "+side+" "+playerSide);
-            Main.println("///////black pieces : " + board.getNumBlackPieces());
-            Main.println("///////white pieces: " + board.getNumWhitePieces());
-            //chk_win = true;
-            Main.println("===========================================");
-        }
 
 
         List<Move> possibleMoves = board.getAllValidMoves(side);

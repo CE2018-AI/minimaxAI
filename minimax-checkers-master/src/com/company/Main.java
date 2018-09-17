@@ -2,12 +2,27 @@ package com.company;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.Scanner;
+import java.lang.StringBuilder;
 
 public class Main {
 
     public static double total = 1;
     public static boolean multipleRoundsTest = false;
+//    Runtime runtime = Runtime.getRuntime();
+//
+//    NumberFormat format = NumberFormat.getInstance();
+//
+//    //StringBuilder sb = new StringBuilder();
+//    long maxMemory = runtime.maxMemory();
+//    long allocatedMemory = runtime.totalMemory();
+//    long freeMemory = runtime.freeMemory();
+
+//sb.append("free memory: " + format.format(freeMemory / 1024) + "<br/>");
+//sb.append("allocated memory: " + format.format(allocatedMemory / 1024) + "<br/>");
+//sb.append("max memory: " + format.format(maxMemory / 1024) + "<br/>");
+//sb.append("total free memory: " + format.format((freeMemory + (maxMemory - allocatedMemory)) / 1024) + "<br/>");
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -15,11 +30,11 @@ public class Main {
         //Player one = new Player("Player 1", Player.Side.BLACK);
         //Player two = new Player("Player 2", Player.Side.WHITE);
 
-        MinimaxAI one = new MinimaxAI(Player.Side.BLACK, 7);
-        MinimaxAI two = new MinimaxAI(Player.Side.WHITE, 4);
+        //MinimaxAI one = new MinimaxAI(Player.Side.BLACK, 4);
+        //MinimaxAI two = new MinimaxAI(Player.Side.WHITE, 4);
 
-        //MinimaxIterative one = new MinimaxIterative(Player.Side.BLACK, 7);
-        //MinimaxIterative two = new MinimaxIterative(Player.Side.WHITE, 6);
+        MinimaxIterative one = new MinimaxIterative(Player.Side.BLACK, 4);
+        MinimaxIterative two = new MinimaxIterative(Player.Side.WHITE, 4);
 
         //RandomAI one = new RandomAI(Player.Side.BLACK);
         //RandomAI two = new RandomAI(Player.Side.WHITE);
@@ -33,6 +48,7 @@ public class Main {
 
         int blackWin = 0;
         int whiteWin = 0;
+        int draw = 0;
         //////////////////////////////////
         try
         {
@@ -160,12 +176,45 @@ public class Main {
                         println("Black wins");
                         blackWin++;
                     }
+//                    double kingWeight = 1.2;
+//                    double blackScore = board.getNumBlackKingPieces() * kingWeight + board.getNumBlackNormalPieces();
+//                    double whiteScore = board.getNumWhiteKingPieces() * kingWeight + board.getNumWhiteNormalPieces();
+//
+//                    if(blackScore > whiteScore)
+//                    {
+//                        println("Black wins with : " + blackScore + " : " + whiteScore);
+//                        blackWin++;
+//                    }
+//                    else if(blackScore < whiteScore)
+//                    {
+//                        println("White win with : " + blackScore + " : " + whiteScore);
+//                        whiteWin++;
+//                    }
+//                    else
+//                    {
+//                        println("Draw");
+//                        draw++;
+//                    }
                     break;
                 }
 
 
 
             }
+            Runtime runtime = Runtime.getRuntime();
+
+            NumberFormat format = NumberFormat.getInstance();
+
+            //StringBuilder sb = new StringBuilder();
+            long maxMemory = runtime.maxMemory();
+            long allocatedMemory = runtime.totalMemory();
+            long freeMemory = runtime.freeMemory();
+
+            System.out.println("free memory: " + format.format(freeMemory / 1024));
+            System.out.println("allocated memory: " + format.format(allocatedMemory / 1024));
+            System.out.println("max memory: " + format.format(maxMemory / 1024));
+            System.out.println("total free memory: " + format.format((freeMemory + (maxMemory - allocatedMemory)) / 1024));
+
             System.out.println("Game finished after: " + c + " rounds");
             try
             {
