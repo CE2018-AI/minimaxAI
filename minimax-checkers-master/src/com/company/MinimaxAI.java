@@ -194,10 +194,7 @@ public class MinimaxAI extends Player implements AI{
                 double result = minimax(tempBoard, depth - 1, flipSide(side), !maximizingPlayer);
 
                 initial = Math.max(result, initial);
-//                alpha = Math.max(alpha, initial);
-//
-//                if(alpha >= beta)
-//                    break;
+
             }
         }
         //minimizing
@@ -212,10 +209,7 @@ public class MinimaxAI extends Player implements AI{
                 double result = minimax(tempBoard, depth - 1, flipSide(side), !maximizingPlayer);
 
                 initial = Math.min(result, initial);
-//                alpha = Math.min(alpha, initial);
-//
-//                if(alpha >= beta)
-//                    break;
+
             }
         }
 

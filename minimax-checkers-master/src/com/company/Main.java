@@ -30,14 +30,11 @@ public class Main {
         //Player one = new Player("Player 1", Player.Side.BLACK);
         //Player two = new Player("Player 2", Player.Side.WHITE);
 
-        MinimaxAI one = new MinimaxAI(Player.Side.BLACK, 10);
-        MinimaxAI two = new MinimaxAI(Player.Side.WHITE, 10);
+        MinimaxAI one = new MinimaxAI(Player.Side.BLACK, 3);
+        MinimaxAI two = new MinimaxAI(Player.Side.WHITE, 2);
 
-        //MinimaxIterative one = new MinimaxIterative(Player.Side.BLACK, 7);
-        //MinimaxIterative two = new MinimaxIterative(Player.Side.WHITE, 7);
-
-        //RandomAI one = new RandomAI(Player.Side.BLACK);
-        //RandomAI two = new RandomAI(Player.Side.WHITE);
+        //MinimaxIterative one = new MinimaxIterative(Player.Side.BLACK, 4);
+        //MinimaxIterative two = new MinimaxIterative(Player.Side.WHITE, 3);
 
         //one goes first if true;
         boolean turn = true;
