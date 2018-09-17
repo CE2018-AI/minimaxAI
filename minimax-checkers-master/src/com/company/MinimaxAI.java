@@ -47,7 +47,7 @@ public class MinimaxAI extends Player implements AI{
         //System.out.println("m is: " + m);
         //Move move = board.getAllValidMoves(getSide()).get(m);
         //////////////////////////////
-        Main.println("move: " + m);
+        //Main.println("move: " + m);
         if(m != null)
         {
             try
@@ -137,9 +137,10 @@ public class MinimaxAI extends Player implements AI{
                 i--;
             }
         }
-        Main.println("Filtered/max heuristics: " + heuristics);
-        Main.println("possible move " + possibleMoves);
+//        Main.println("Filtered/max heuristics: " + heuristics);
+//        Main.println("possible move " + possibleMoves);
         return possibleMoves.get(rand.nextInt(possibleMoves.size()));
+        //return possibleMoves.get(0);
     }
 
     private double minimax(Board board, int depth, Side side, boolean maximizingPlayer)
@@ -158,14 +159,25 @@ public class MinimaxAI extends Player implements AI{
         else{
             playerSide = side;
         }
-//        if( (playerSide == Side.BLACK && board.getNumWhitePieces() == 0) || (playerSide == Side.WHITE && board.getNumBlackPieces() == 0) )
-//        {
+
+        if( (playerSide == Side.BLACK && board.getNumWhitePieces() == 0) || (playerSide == Side.WHITE && board.getNumBlackPieces() == 0) )
+        {
 //            Main.println("side: " + maximizingPlayer +" "+side+" "+playerSide);
 //            Main.println("black pieces : " + board.getNumBlackPieces());
 //            Main.println("white pieces: " + board.getNumWhitePieces());
-//            chk_win = true;
+//
 //            Main.println("===========================================");
-//        }
+            return Double.POSITIVE_INFINITY;
+        }
+        if( board.getAllValidMoves(flipSide(playerSide)).size() == 0 )
+        {
+//            Main.println("side: " + maximizingPlayer +" "+side+" "+playerSide);
+//            Main.println("black move : " + board.getAllValidMoves(Side.BLACK));
+//            Main.println("white move : " + board.getAllValidMoves(Side.WHITE));
+//
+//            Main.println("+++++++++++++++++++++++++++++++++++++++++++++++");
+            return Double.POSITIVE_INFINITY;
+        }
 
         List<Move> possibleMoves = board.getAllValidMoves(side);
 

@@ -30,11 +30,11 @@ public class Main {
         //Player one = new Player("Player 1", Player.Side.BLACK);
         //Player two = new Player("Player 2", Player.Side.WHITE);
 
-        //MinimaxAI one = new MinimaxAI(Player.Side.BLACK, 4);
-        //MinimaxAI two = new MinimaxAI(Player.Side.WHITE, 4);
+        MinimaxAI one = new MinimaxAI(Player.Side.BLACK, 10);
+        MinimaxAI two = new MinimaxAI(Player.Side.WHITE, 10);
 
-        MinimaxIterative one = new MinimaxIterative(Player.Side.BLACK, 4);
-        MinimaxIterative two = new MinimaxIterative(Player.Side.WHITE, 4);
+        //MinimaxIterative one = new MinimaxIterative(Player.Side.BLACK, 7);
+        //MinimaxIterative two = new MinimaxIterative(Player.Side.WHITE, 7);
 
         //RandomAI one = new RandomAI(Player.Side.BLACK);
         //RandomAI two = new RandomAI(Player.Side.WHITE);
@@ -48,7 +48,7 @@ public class Main {
 
         int blackWin = 0;
         int whiteWin = 0;
-        int draw = 0;
+
         //////////////////////////////////
         try
         {
