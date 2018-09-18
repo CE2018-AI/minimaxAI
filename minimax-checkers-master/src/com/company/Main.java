@@ -36,6 +36,8 @@ public class Main {
         //MinimaxIterative one = new MinimaxIterative(Player.Side.BLACK, 4);
         //MinimaxIterative two = new MinimaxIterative(Player.Side.WHITE, 3);
 
+        /////////////////////////////////////////////////////////
+
         //one goes first if true;
         boolean turn = true;
 
@@ -46,7 +48,7 @@ public class Main {
         int blackWin = 0;
         int whiteWin = 0;
 
-        //////////////////////////////////
+        /////////////////////////////////////////////
         try
         {
             String filename= "start.txt";
@@ -225,8 +227,8 @@ public class Main {
                 System.err.println("IOException: " + ioe.getMessage());
             }
 
-            if(one instanceof AI)
-                System.out.println("Avg time per move(one): " + (one).getAverageTimePerMove());
+//            if(one instanceof AI)
+//                System.out.println("Avg time per move(one): " + (one).getAverageTimePerMove());
 //            if(one instanceof MinimaxAI)
 //                System.out.println("Avg time per move: " + ((MinimaxAI)one).getAverageTimePerMove());
         }

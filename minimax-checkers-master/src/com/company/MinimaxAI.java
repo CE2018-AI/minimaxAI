@@ -47,7 +47,7 @@ public class MinimaxAI extends Player implements AI{
         //System.out.println("m is: " + m);
         //Move move = board.getAllValidMoves(getSide()).get(m);
         //////////////////////////////
-        //Main.println("move: " + m);
+        Main.println("move: " + m);
         if(m != null)
         {
             try
@@ -93,8 +93,6 @@ public class MinimaxAI extends Player implements AI{
 
     private Move minimaxStart(Board board, int depth, Side side, boolean maximizingPlayer)
     {
-//        double alpha = Double.NEGATIVE_INFINITY;
-//        double beta = Double.POSITIVE_INFINITY;
 
         List<Move> possibleMoves;
         if(skippingPoint == null)
