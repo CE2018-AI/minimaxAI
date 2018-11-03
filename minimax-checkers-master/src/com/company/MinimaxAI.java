@@ -17,7 +17,6 @@ public class MinimaxAI extends Player implements AI{
     private int depth;
     private long totalTimeElapsed;
     private double numMovesCalled;
-    private int pruned = 0;
     public MinimaxAI(String name, Side s)
     {
         super(name, s);

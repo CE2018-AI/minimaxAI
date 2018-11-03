@@ -17,7 +17,6 @@ public class MinimaxIterative extends Player implements AI{
     private int depth;
     private long totalTimeElapsed;
     private double numMovesCalled;
-    private int pruned = 0;
     public MinimaxIterative(String name, Side s)
     {
         super(name, s);
