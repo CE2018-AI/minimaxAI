@@ -125,6 +125,7 @@ public class MinimaxAlphaBetaAI extends Player implements AI{
         }
         //Main.println("Filtered/max heuristics: " + heuristics);
         return possibleMoves.get(rand.nextInt(possibleMoves.size()));
+        //return possibleMoves.get(0);
     }
 
     private double minimax(Board board, int depth, Side side, boolean maximizingPlayer, double alpha, double beta)
@@ -132,6 +133,37 @@ public class MinimaxAlphaBetaAI extends Player implements AI{
         if(depth == 0) {
             return getHeuristic(board);
         }
+        
+        Side playerSide = null;
+
+//        Main.println("black pieces : " + board.getNumBlackPieces());
+//        Main.println("white pieces: " + board.getNumWhitePieces());
+        if(!maximizingPlayer ){
+            playerSide = flipSide(side);
+        }
+        else{
+            playerSide = side;
+        }
+
+        if( (playerSide == Side.BLACK && board.getNumWhitePieces() == 0) || (playerSide == Side.WHITE && board.getNumBlackPieces() == 0) )
+        {
+//            Main.println("side: " + maximizingPlayer +" "+side+" "+playerSide);
+//            Main.println("black pieces : " + board.getNumBlackPieces());
+//            Main.println("white pieces: " + board.getNumWhitePieces());
+//
+//            Main.println("===========================================");
+            return Double.POSITIVE_INFINITY;
+        }
+        if( board.getAllValidMoves(flipSide(playerSide)).size() == 0 )
+        {
+//            Main.println("side: " + maximizingPlayer +" "+side+" "+playerSide);
+//            Main.println("black move : " + board.getAllValidMoves(Side.BLACK));
+//            Main.println("white move : " + board.getAllValidMoves(Side.WHITE));
+//
+//            Main.println("+++++++++++++++++++++++++++++++++++++++++++++++");
+            return Double.POSITIVE_INFINITY;
+        }
+
         List<Move> possibleMoves = board.getAllValidMoves(side);
 
         double initial = 0;
